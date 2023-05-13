@@ -1,9 +1,15 @@
 let formRegistrazione = document.querySelector(".registrationForm");
+let punteggio;
 
 let persona = {
 	nome: "",
 	cognome: "",
 };
+
+//localStorage con stringify per restituire l'oggetto JSON stringato
+//json.parse per riottenerlo
+//setItem e getItem
+//creare un altro button per il cambio di domanda
 
 try {
 	formRegistrazione.addEventListener("submit", function (e) {
