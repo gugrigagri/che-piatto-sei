@@ -1,0 +1,15 @@
+
+localStorage con stringify per restituire l'oggetto JSON stringato
+json.parse per riottenerlo
+setItem e getItem
+creare un altro button per il cambio di domanda --> fare funzione che salvi il risultato della domadna precedente e che cada
+semplicemente a modificare il testo della domanda e delle risposte
+
+utilizzare questo quando verrà mostrato il risultato del quiz --> let persona = JSON.parse(localStorage.getItem("person"));
+
+document.querySelectorAll('style,link[rel="stylesheet"]').forEach(item => item.remove()) --> in questo modo vado ad eliminare
+tutto lo stile della pagina, per poi andare a mettere le immagini con la scritta sotto
+
+TIPO DI PIATTO
+IMMAGINE
+grazie per aver partecipato a questo qiuz nome - cognome

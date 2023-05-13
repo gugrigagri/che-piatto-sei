@@ -6,28 +6,23 @@ let persona = {
 	cognome: "",
 };
 
-//localStorage con stringify per restituire l'oggetto JSON stringato
-//json.parse per riottenerlo
-//setItem e getItem
-//creare un altro button per il cambio di domanda
+formRegistrazione.addEventListener("submit", function (e) {
+	e.preventDefault();
 
-try {
-	formRegistrazione.addEventListener("submit", function (e) {
-		e.preventDefault();
+	let nome = document.querySelector(".forNome").value;
+	let cognome = document.querySelector(".forCognome").value;
 
-		let nome = document.querySelector(".forNome").value;
-		let cognome = document.querySelector(".forCognome").value;
+	persona.nome = nome;
+	persona.cognome = cognome;
 
-		persona.nome = nome;
-		persona.cognome = cognome;
+	setTimeout("pageRedirect()", 2500);
 
-		setTimeout("pageRedirect()", 2500);
-		console.log(persona.nome);
-		console.log(persona.cognome);
-	});
-} catch {
-	console.log("form non in questa pagina");
-}
+	console.log(`nome della persona --> ${persona.nome}`);
+	console.log(`cognome della persona --> ${persona.cognome}`);
+
+	localStorage.setItem("person", JSON.stringify(persona))
+	console.log(persona)
+});
 
 function pageRedirect() {
 	window.location.replace("domanda.html");
