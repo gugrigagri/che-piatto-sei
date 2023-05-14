@@ -13,3 +13,6 @@ tutto lo stile della pagina, per poi andare a mettere le immagini con la scritta
 TIPO DI PIATTO
 IMMAGINE
 grazie per aver partecipato a questo qiuz nome - cognome
+
+Salvare il punteggio in local storage, in modo tale da poterlo utilizzare anche nella pagina finale dove verrà fatta vedere il
+piatto a cui si assomiglia
