@@ -88,6 +88,23 @@ let questions = [
 			},
 		],
 	},
+	{
+		question: "Cosa ti rende più felice?",
+		answers: [
+			{
+				text: "Spade laser",
+				value: -10,
+			},
+			{
+				text: "Lego",
+				value: 5,
+			},
+			{
+				text: "Il grande fratello",
+				value: 20,
+			},
+		],
+	},
 ];
 
 let questionSpan = document.querySelector(".question");
@@ -105,20 +122,23 @@ nella funzione showQuestions:
     - ripetere la sequenza
 */
 
-function generateRandomNumber(array) {
-	let randomNumber = Math.floor(Math.random() * array.length);
-	return randomNumber;
-}
-
 function showQuestions(arrayQuestions) {
+	questionSpan.innerHTML = arrayQuestions[0].question;
+	answer1.innerHTML = arrayQuestions[0].answers[0].text;
+	answer2.innerHTML = arrayQuestions[0].answers[1].text;
+	answer3.innerHTML = arrayQuestions[0].answers[2].text;
 
-    //genera un numero casuale
-    generateRandomNumber()
-	questionSpan.innerHTML = arrayQuestions.question;
+	arrayQuestions.shift();
+
+	//devi anche registrare nella variabile punteggio, il punteggio della singola domanda che sei andato a cliccare
 }
 
 cambiaDomanda.addEventListener("click", function (e) {
 	e.preventDefault();
 
-	showQuestions(questions);
+	if (questions.length === 0) {
+		cambiaDomanda.remove();
+	} else {
+		showQuestions(questions);
+	}
 });
