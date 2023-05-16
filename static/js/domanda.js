@@ -1,3 +1,5 @@
+let punteggio = 0;
+
 let piatti = [
 	{
 		nome: "Parmigiana di melenzane",
@@ -127,6 +129,16 @@ function showQuestions(arrayQuestions) {
 	answer1.innerHTML = arrayQuestions[0].answers[0].text;
 	answer2.innerHTML = arrayQuestions[0].answers[1].text;
 	answer3.innerHTML = arrayQuestions[0].answers[2].text;
+
+	let checkedInput = document.querySelector('input[name="question-1"]:checked');
+
+	if (checkedInput) {
+		let selectedValue = parseInt(checkedInput.value);
+		console.log("Selected value:", selectedValue);
+		punteggio = punteggio + selectedValue;
+	} else {
+		console.log("No input selected");
+	}
 
 	arrayQuestions.shift();
 

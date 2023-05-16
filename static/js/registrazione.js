@@ -1,5 +1,4 @@
 let formRegistrazione = document.querySelector(".registrationForm");
-let punteggio;
 
 let persona = {
 	nome: "",
