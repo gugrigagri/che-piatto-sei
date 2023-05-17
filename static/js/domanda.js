@@ -129,7 +129,6 @@ cambiaDomanda.addEventListener("click", function (e) {
 
 	document.querySelector("h2").classList.remove("fuoriTitolo");
 	let labels = document.querySelectorAll("label");
-
 	labels.forEach(function (label) {
 		label.classList.remove("fuori");
 	});
