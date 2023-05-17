@@ -1,74 +1,53 @@
 let punteggio = 0;
 
-let piatti = [
-	{
-		nome: "Parmigiana di melenzane",
-		foto: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fricette.giallozafferano.it%2FParmigiana-di-melanzane.html&psig=AOvVaw0KfbbONFYZTOIfKfg4yYfv&ust=1683917314265000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCOjvkov37f4CFQAAAAAdAAAAABADF",
-		descrizione: "Sei una parmigiana",
-		valore: 50,
-	},
-	{
-		nome: "Popizze",
-		foto: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pugliainesclusiva.it%2Fpopizze-baresi-pettole-pugliesi%2F&psig=AOvVaw3yUH8NdARXewqL-lukf2pR&ust=1683917381411000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCLC1rKL37f4CFQAAAAAdAAAAABAD",
-		descrizione: "Sei una bella popizza",
-		valore: 30,
-	},
-	{
-		nome: "Sgagliozze",
-		foto: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fblog.giallozafferano.it%2Ffablesucre%2Fsgagliozze%2F&psig=AOvVaw1dqcFqO4OUvWzzHKAsfKv2&ust=1683917408750000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNj536337f4CFQAAAAAdAAAAABAD",
-		descrizione: "Sei proprio una sgagliozza",
-		valore: 20,
-	},
-];
-
 let questions = [
 	{
-		question: "Che colore ti piace?",
+		question: "Che ne pensi delle popizze",
 		answers: [
 			{
-				text: "Rosso",
+				text: "Buone",
 				value: 10,
 			},
 			{
-				text: "Blu",
+				text: "Indifferente",
 				value: 0,
 			},
 			{
-				text: "Giallo",
+				text: "Disgustose",
 				value: -10,
 			},
 		],
 	},
 	{
-		question: "Che ne pensi delle cozze?",
+		question: "Ti piace il sugo?",
 		answers: [
 			{
-				text: "Meglio cotte",
+				text: "Tanto",
 				value: -10,
 			},
 			{
-				text: "Troppo cozzale",
+				text: "Preferisco mangiare in bianco",
 				value: 5,
 			},
 			{
-				text: "La colazione del campione",
+				text: "Solo se da pomodori napoletani",
 				value: 20,
 			},
 		],
 	},
 	{
-		question: "Qual è il tuo genere musicale preferito?",
+		question: "Ti piacciono le melanzane?",
 		answers: [
 			{
-				text: "Pop",
+				text: "buonissime",
 				value: -10,
 			},
 			{
-				text: "Rock",
+				text: "per niente",
 				value: 5,
 			},
 			{
-				text: "Rap",
+				text: "preferisco i carciofi",
 				value: 20,
 			},
 		],
@@ -85,7 +64,7 @@ let questions = [
 				value: 5,
 			},
 			{
-				text: "Ciclismo",
+				text: "divano olimpionico",
 				value: 20,
 			},
 		],
@@ -94,15 +73,15 @@ let questions = [
 		question: "Cosa ti rende più felice?",
 		answers: [
 			{
-				text: "Spade laser",
+				text: "La parmigiana della nonna",
 				value: -10,
 			},
 			{
-				text: "Lego",
+				text: "Le sgagliozze della nonna",
 				value: 5,
 			},
 			{
-				text: "Il grande fratello",
+				text: "Le popizze della nonna",
 				value: 20,
 			},
 		],
@@ -148,9 +127,29 @@ function showQuestions(arrayQuestions) {
 cambiaDomanda.addEventListener("click", function (e) {
 	e.preventDefault();
 
+	document.querySelector("h2").classList.remove("fuoriTitolo");
+	let labels = document.querySelectorAll("label");
+
+	labels.forEach(function (label) {
+		label.classList.remove("fuori");
+	});
+
 	if (questions.length === 0) {
 		cambiaDomanda.remove();
 	} else {
 		showQuestions(questions);
 	}
 });
+
+let formFood = document.querySelector("form");
+
+formFood.addEventListener("submit", function (e) {
+	e.preventDefault();
+
+	localStorage.setItem("punteggio", punteggio);
+	setTimeout("pageRedirect()", 3000);
+});
+
+function pageRedirect() {
+	window.location.replace("risultato.html");
+}

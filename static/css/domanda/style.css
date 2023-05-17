@@ -272,4 +272,13 @@ svg path {
 
 form {
   position: absolute;
+}
+
+.fuori {
+  top: -400px;
+}
+
+.fuoriTitolo {
+  top: 80px;
+  position: relative;
 }/*# sourceMappingURL=style.css.map */
