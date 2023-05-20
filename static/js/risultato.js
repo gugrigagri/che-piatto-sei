@@ -1,3 +1,7 @@
+//fare uscire il risultato subito
+//far viusalizzare sonlo alla fine delle domande il tasto di submit finale
+//togliere il cheched dal campo di input
+
 let piatti = [
 	{
 		nome: "Parmigiana di melenzane",
@@ -41,40 +45,36 @@ function chePiattoSei(numero) {
 
 let pulsanteRivelatore = document.querySelector("a");
 
-pulsanteRivelatore.addEventListener("click", function (e) {
-	e.preventDefault();
+let piattoImmagine = chePiattoSei(punteggioF);
 
-	let piattoImmagine = chePiattoSei(punteggioF);
+document.body.innerHTML = "";
 
-	document.body.innerHTML = "";
+let personaStringa = document.createElement("p");
+personaStringa.innerHTML = `${personaObj.nome} ${personaObj.cognome}`;
+document.body.appendChild(personaStringa);
 
-	let personaStringa = document.createElement("p");
-	personaStringa.innerHTML = `${personaObj.nome} ${personaObj.cognome}`;
-	document.body.appendChild(personaStringa);
+if (piattoImmagine === 50) {
+	let immagine = document.createElement("img");
+	immagine.src = piatti[0].foto;
+	document.body.appendChild(immagine);
 
-	if (piattoImmagine === 50) {
-		let immagine = document.createElement("img");
-		immagine.src = piatti[0].foto;
-		document.body.appendChild(immagine);
+	let descrizione = document.createElement("p");
+	descrizione.textContent = piatti[0].descrizione;
+	document.body.appendChild(descrizione);
+} else if (piattoImmagine === 30) {
+	let immagine = document.createElement("img");
+	immagine.src = piatti[1].foto;
+	document.body.appendChild(immagine);
 
-		let descrizione = document.createElement("p");
-		descrizione.textContent = piatti[0].descrizione;
-		document.body.appendChild(descrizione);
-	} else if (piattoImmagine === 30) {
-		let immagine = document.createElement("img");
-		immagine.src = piatti[1].foto;
-		document.body.appendChild(immagine);
+	let descrizione = document.createElement("p");
+	descrizione.textContent = piatti[1].descrizione;
+	document.body.appendChild(descrizione);
+} else {
+	let immagine = document.createElement("img");
+	immagine.src = piatti[2].foto;
+	document.body.appendChild(immagine);
 
-		let descrizione = document.createElement("p");
-		descrizione.textContent = piatti[1].descrizione;
-		document.body.appendChild(descrizione);
-	} else {
-		let immagine = document.createElement("img");
-		immagine.src = piatti[2].foto;
-		document.body.appendChild(immagine);
-
-		let descrizione = document.createElement("p");
-		descrizione.textContent = piatti[2].descrizione;
-		document.body.appendChild(descrizione);
-	}
-});
+	let descrizione = document.createElement("p");
+	descrizione.textContent = piatti[2].descrizione;
+	document.body.appendChild(descrizione);
+}

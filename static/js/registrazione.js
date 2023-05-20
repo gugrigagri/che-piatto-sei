@@ -14,7 +14,7 @@ formRegistrazione.addEventListener("submit", function (e) {
 	persona.nome = nome;
 	persona.cognome = cognome;
 
-	setTimeout("pageRedirect()", 2500);
+	pageRedirect()
 
 	console.log(`nome della persona --> ${persona.nome}`);
 	console.log(`cognome della persona --> ${persona.cognome}`);

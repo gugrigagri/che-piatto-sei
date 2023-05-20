@@ -2,18 +2,18 @@ let punteggio = 0;
 
 let questions = [
 	{
-		question: "Che ne pensi delle popizze",
+		question: "Al mattino:",
 		answers: [
 			{
-				text: "Buone",
+				text: "Mangio molto per colazione",
 				value: 10,
 			},
 			{
-				text: "Indifferente",
+				text: "Quando capita",
 				value: 0,
 			},
 			{
-				text: "Disgustose",
+				text: "Non mangio mai",
 				value: -10,
 			},
 		],
@@ -36,24 +36,24 @@ let questions = [
 		],
 	},
 	{
-		question: "Ti piacciono le melanzane?",
+		question: "Cosa preferisci tra: ",
 		answers: [
 			{
-				text: "buonissime",
+				text: "Gioranta al mare",
 				value: -10,
 			},
 			{
-				text: "per niente",
+				text: "Giornata in montagna",
 				value: 5,
 			},
 			{
-				text: "preferisco i carciofi",
+				text: "Me ne sto a casa",
 				value: 20,
 			},
 		],
 	},
 	{
-		question: "Qual è la tua attività preferita da fare all'aperto?",
+		question: "Qual è l'attività che più preferisci",
 		answers: [
 			{
 				text: "Camminata",
@@ -77,11 +77,11 @@ let questions = [
 				value: -10,
 			},
 			{
-				text: "Le sgagliozze della nonna",
+				text: "Le sgagliozze a Bari vecchia",
 				value: 5,
 			},
 			{
-				text: "Le popizze della nonna",
+				text: "Le popizze del fast food",
 				value: 20,
 			},
 		],
@@ -135,6 +135,9 @@ cambiaDomanda.addEventListener("click", function (e) {
 
 	if (questions.length === 0) {
 		cambiaDomanda.remove();
+		//inserire funzione che fa apparire il pulsante di submit
+		let buttonSubmit = document.querySelector('#btn')
+		buttonSubmit.classList.remove('nascosto')
 	} else {
 		showQuestions(questions);
 	}
