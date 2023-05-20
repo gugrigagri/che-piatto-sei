@@ -72,9 +72,6 @@ h2 {
 .bulgy-radios input:checked ~ .radio::after {
   opacity: 1;
 }
-.bulgy-radios input:checked ~ .label {
-  color: #0bae72;
-}
 .bulgy-radios input:checked ~ .label span {
   animation: bulge 0.5s forwards;
 }
@@ -275,7 +272,7 @@ form {
 }
 
 .fuori {
-  top: -400px;
+  top: -450px;
 }
 
 .fuoriTitolo {

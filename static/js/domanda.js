@@ -127,6 +127,8 @@ function showQuestions(arrayQuestions) {
 cambiaDomanda.addEventListener("click", function (e) {
 	e.preventDefault();
 
+	
+
 	document.querySelector("h2").classList.remove("fuoriTitolo");
 	let labels = document.querySelectorAll("label");
 	labels.forEach(function (label) {
@@ -136,11 +138,18 @@ cambiaDomanda.addEventListener("click", function (e) {
 	if (questions.length === 0) {
 		cambiaDomanda.remove();
 		//inserire funzione che fa apparire il pulsante di submit
-		let buttonSubmit = document.querySelector('#btn')
-		buttonSubmit.classList.remove('nascosto')
+		let buttonSubmit = document.querySelector("#btn");
+		buttonSubmit.classList.remove("nascosto");
 	} else {
 		showQuestions(questions);
 	}
+
+	let inputElements = document.querySelectorAll("input");
+	inputElements.forEach(function (input) {
+		if (input.checked) {
+			input.checked = false
+		}
+	});
 });
 
 let formFood = document.querySelector("form");
